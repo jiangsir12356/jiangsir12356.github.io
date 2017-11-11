@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MyfirstHexo</title>
+  
+  <subtitle>Goals determine what you are going to be</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-11-10T08:37:15.704Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>JiangGongQuan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/11/08/first-post/"/>
+    <id>http://yoursite.com/2017/11/08/first-post/</id>
+    <published>2017-11-08T01:37:41.142Z</published>
+    <updated>2017-11-10T08:37:15.704Z</updated>
+    
+    <content type="html"><![CDATA[<p>主题: 我的第一个博客<br>日期: 2017-11-08 9:27<br>随笔: 记录我的学习点滴                     #文章标签，多于一项时用这种格式，只有一项时使用tags: blog</p><pre><code>#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上</code></pre><p><a id="more"></a>                之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。<br><img src="/images/fengjing.jpg" alt="&quot;风景图片&quot;"></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27896490&auto=0&height=66"><br></iframe>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主题: 我的第一个博客&lt;br&gt;日期: 2017-11-08 9:27&lt;br&gt;随笔: 记录我的学习点滴                     #文章标签，多于一项时用这种格式，只有一项时使用tags: blog&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/11/07/hello-world/"/>
+    <id>http://yoursite.com/2017/11/07/hello-world/</id>
+    <published>2017-11-07T14:59:19.398Z</published>
+    <updated>2017-11-07T14:59:19.398Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
