@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-10T08:37:15.704Z</updated>
+  <updated>2017-11-11T03:08:44.308Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>我的第一个博客</title>
     <link href="http://yoursite.com/2017/11/08/first-post/"/>
     <id>http://yoursite.com/2017/11/08/first-post/</id>
     <published>2017-11-08T01:37:41.142Z</published>
-    <updated>2017-11-10T08:37:15.704Z</updated>
+    <updated>2017-11-11T03:08:44.308Z</updated>
     
-    <content type="html"><![CDATA[<p>主题: 我的第一个博客<br>日期: 2017-11-08 9:27<br>随笔: 记录我的学习点滴                     #文章标签，多于一项时用这种格式，只有一项时使用tags: blog</p><pre><code>#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上</code></pre><p><a id="more"></a>                之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。<br><img src="/images/fengjing.jpg" alt="&quot;风景图片&quot;"></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27896490&auto=0&height=66"><br></iframe>]]></content>
+    <content type="html"><![CDATA[<p>日期: 2017-11-08 9:27<br>随笔: 记录我的学习点滴<br>这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上<br><a id="more"></a>                之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。<br><img src="/images/fengjing.jpg" alt="&quot;风景图片&quot;"></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27896490&auto=0&height=66"><br></iframe><p>###<a href="https://www.baidu.com/baidu?tn=monline_3_dg&amp;ie=utf-8&amp;wd=hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0rss" target="_blank" rel="external">“中号”</a>博客</p><p>##创建博客<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;主题: 我的第一个博客&lt;br&gt;日期: 2017-11-08 9:27&lt;br&gt;随笔: 记录我的学习点滴                     #文章标签，多于一项时用这种格式，只有一项时使用tags: blog&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+      &lt;p&gt;日期: 2017-11-08 9:27&lt;br&gt;随笔: 记录我的学习点滴&lt;br&gt;这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上&lt;br&gt;
     
     </summary>
     
