@@ -4,23 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>HOT BLOOD</title>
+    <title>Hadoop伪分布式环境搭建(ubuntu14.04) | HOT BLOOD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="JiangGongQuan">
     
 
     
-    <meta name="description" content="Goals determine what you are going to be">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HOT BLOOD">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="一、java环境搭建 参考博客：http://blog.csdn.net/best3c/article/details/72848540 1、安装JDK 1.1新建一个java文件夹名字叫java7u791mkdir /usr/java7u79 1.2将linux版本的jdk安装包从宿主机复制进客人机(客户机)，一般直接可以拖进来，然后拷贝·进/usr/java7u79目录1cp /home/ji">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop伪分布式环境搭建(ubuntu14.04)">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/third-post-hadoop搭建/index.html">
 <meta property="og:site_name" content="HOT BLOOD">
-<meta property="og:description" content="Goals determine what you are going to be">
+<meta property="og:description" content="一、java环境搭建 参考博客：http://blog.csdn.net/best3c/article/details/72848540 1、安装JDK 1.1新建一个java文件夹名字叫java7u791mkdir /usr/java7u79 1.2将linux版本的jdk安装包从宿主机复制进客人机(客户机)，一般直接可以拖进来，然后拷贝·进/usr/java7u79目录1cp /home/ji">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/A.png">
+<meta property="og:image" content="http://yoursite.com/images/B.png">
+<meta property="og:image" content="http://yoursite.com/images/F.png">
+<meta property="og:image" content="http://yoursite.com/images/H.png">
+<meta property="og:image" content="http://yoursite.com/images/H.png">
+<meta property="og:image" content="http://yoursite.com/images/I.png">
+<meta property="og:image" content="http://yoursite.com/images/J.png">
+<meta property="og:updated_time" content="2018-03-11T14:05:53.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HOT BLOOD">
-<meta name="twitter:description" content="Goals determine what you are going to be">
+<meta name="twitter:title" content="Hadoop伪分布式环境搭建(ubuntu14.04)">
+<meta name="twitter:description" content="一、java环境搭建 参考博客：http://blog.csdn.net/best3c/article/details/72848540 1、安装JDK 1.1新建一个java文件夹名字叫java7u791mkdir /usr/java7u79 1.2将linux版本的jdk安装包从宿主机复制进客人机(客户机)，一般直接可以拖进来，然后拷贝·进/usr/java7u79目录1cp /home/ji">
+<meta name="twitter:image" content="http://yoursite.com/images/A.png">
 
     
     <link rel="alternative" href="/atom.xml" title="HOT BLOOD" type="application/atom+xml">
@@ -95,12 +104,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2018/03/11/third-post-hadoop搭建/" title="Hadoop伪分布式环境搭建(ubuntu14.04)" itemprop="url">Hadoop伪分布式环境搭建(ubuntu14.04)</a>
@@ -114,9 +121,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <p>一、java环境搭建</p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>一、java环境搭建</p>
 <p>参考博客：<a href="http://blog.csdn.net/best3c/article/details/72848540" target="_blank" rel="external">http://blog.csdn.net/best3c/article/details/72848540</a></p>
 <p>1、安装JDK</p>
 <p>1.1新建一个java文件夹名字叫java7u79<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /usr/java7u79</div></pre></td></tr></table></figure></p>
@@ -152,14 +166,9 @@
 <p>5.2 修改配置文件 mapred-site.xml，这边需要先进行重命名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv ./etc/hadoop/mapred-site.xml.template ./etc/hadoop/mapred-site.xml</div></pre></td></tr></table></figure></p>
 <p>5.3 然后再进行编辑 vim ./etc/hadoop/mapred-site.xml<br> <img src="/images/H.png" alt="&quot;图八&quot;"><br>5.4修改配置文件 yarn-site.xml<br> <img src="/images/I.png" alt="&quot;图九&quot;"><br>5.5启动YARN(启动之前先启动hadoop)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./sbin/start-yarn.sh      <span class="comment"># 启动YARN</span></div><div class="line">./sbin/mr-jobhistory-daemon.sh start historyserver  <span class="comment"># 开启历史服务器，才能在Web中查看任务运行情况</span></div></pre></td></tr></table></figure></p>
 <p>5.6  ps查看，可以看到多了 NodeManager 和 ResourceManager 两个后台进程，如下图所示。<br> <img src="/images/J.png" alt="&quot;图十&quot;"><br>5.7 YARN启动和关闭（单机若无需要不建议开启YARN,使用反而会使程序变慢）<br>![“图十一”](/images/K.png<br>./sbin/mr-jobhistory-daemon.sh stop historyserver<br>stopping historyserver<br>```</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+  
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
@@ -167,160 +176,44 @@
 
 
 
-
-<div class="comments-count">
+	<div class="article-share" id="share">
 	
-</div>
+	  <div data-url="http://yoursite.com/2018/03/11/third-post-hadoop搭建/" data-title="Hadoop伪分布式环境搭建(ubuntu14.04) | HOT BLOOD" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
 
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/11/28/second-post-Java/" title="Java基础归纳" itemprop="url">Java基础归纳</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="JiangGongQuan" target="_blank" itemprop="author">JiangGongQuan</a>
-		
-  <p class="article-time">
-    <time datetime="2017-11-28T02:11:04.717Z" itemprop="datePublished"> 发表于 2017-11-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>博客初心:</p>
-<p>此次归纳大多结合java核心技术卷一，总结知识要点，最主要的是通过博客的方式让自己知识记得更加牢固。</p>
-<p>一. 基础篇</p>
-<p>1.编译方式</p>
-<p>1.1 DOS编译：</p>
-<p>(1)在某文件中创建记事本<br>(2)打开记事本编写java代码，使用 类.java 作为文件名保存<br>(3)进入DOS,切换路径到文件路径<br>(4)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">javac 类.java</div><div class="line">java 类</div></pre></td></tr></table></figure></p>
-<p>1.2 eclipse和idea编译</p>
-<p>现在最主流的java编译工具：eclipse和idea，前者适用范围广，后者方便功能强大，各有优点</p>
-<p>常用eclipse快捷键：<br>(1)alt + / :自动提示代码<br>(2)ctrl + o:查询特定的类和方法<br>(3)ctrl + shift + r ：打开工作空间所有的.java文件，输入对应的回车进入<br>(4)ctrl + e ：打开正在编辑栏的 .java文件<br>(5)ctrl + pageup/pagedown ： java编辑栏.java文件之间的切换<br>(6)ctrl + d ： 删除当前行<br>(7)ctrl + shift + enter : 保持光标不变，在当前行下创建空白行<br>(8)alt + 上下方向键 : 移动选中代码块，默认光标一行<br>(9)ctrl + m ：当前编辑页面最大化，最小化之间的切换<br>(10)ctrl + / :注释一行或多行代码<br>(11)ctrl + shift + /：注释多行代码/<em> </em>/方式<br>+\  ：取消注释<br>(12)ctrl + shift + x | Y :英文字母大小写转化<br>(13)ctrl  + shift + o : 导入代码中需要的包<br>(14)ctrl + shift + f: 格式化当前代码</p>
-<p>2.字符，字符串</p>
-<p>java字符串就是unicode字符序列</p>
-<p>2.1 子串的提取（SubString）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">字符串.SubString(下标1，下标2);</div><div class="line"><span class="comment">#下标1代表从哪开始提取，下标2代表不提取的第一个位置</span></div></pre></td></tr></table></figure></p>
-<p>例如:<br>String a = “hello”;<br>b = a.SubString(0,3);</p>
-<p>#b输出hel,属于下标0，1，2</p>
-<p>2.2 字符串拼接（join）</p>
-<p>注 ： 字符串与字符串拼接用”+”;与非字符串自动拼接，此时非字符串自动转化为字符串<br>特地的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#自定义拼接方式</span></div><div class="line">String all = String.join(<span class="string">"/"</span>,<span class="string">"s"</span>,<span class="string">"M"</span>,<span class="string">"L"</span>);</div><div class="line"><span class="comment">#"/"可以自己定义拼接方式，此时all输出s/M/L</span></div></pre></td></tr></table></figure></p>
-<p>2.3 字符串是否相等（euqals()）</p>
-<p>默认的equals()方法区分大小写，使用equalsIgnoreCase()不区分<br>注：equals()区别于”==”，equals()只是比较数值，而”==”比较引用对象的位置和数值</p>
-<p>2.4 空串和null串</p>
-<p>空串是java对象，串长度为0内容为空，例如：String a = “”;<br>null串，表示没有任何对象与该变量关联，常常做为对象初始化，例如： String b = null;</p>
-<p>2.5 构建字符串(StringBuilder)</p>
-<p>#建立一个空构造器<br>StringBuilder a = new StringBuilder();</p>
-<p>#添加内容<br>a.append();</p>
-<p>#构建字符串,b为新的字符串<br>String b = a.toString();</p>
-<p>2.6 输入与输出</p>
-<p>import引入java包的原因：使用的类不是定义在基本java.lang包</p>
-<p>Dos中完成密码不可见输入（eclipse中不适用,会报错）：<br>Console cons = System.console();<br>String Username = cons.readLine();<br>char[] Passwd = cons.readPassword();</p>
-<p>#为了安全起见，返回的密码存放在一维数组中</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
+   	       
+	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/11/28/second-post-Java/"  title="Java基础归纳">
+ <strong>下一篇：</strong><br/> 
+ <span>Java基础归纳
+</span>
+</a>
 </div>
 
-</footer>
+</nav>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/11/08/first-post/" title="hexo+github搭建博客" itemprop="url">hexo+github搭建博客</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="JiangGongQuan" target="_blank" itemprop="author">JiangGongQuan</a>
-		
-  <p class="article-time">
-    <time datetime="2017-11-08T01:37:41.142Z" itemprop="datePublished"> 发表于 2017-11-08</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>一. 准备相关工具 </p>
-<p>1.注册一个github账号 (用户名关系到仓库名和网址)；<br><a href="https://github.com" target="_blank" rel="external">github注册</a><br>2.安装node.js；<br>3.安装git(git终端执行命令行方便快捷)；</p>
-<p>二. 创建github仓库</p>
-<p>仓库格式为 （用户名.github.io）,比如说你的用户名为：zhangsan,那么仓库名为：zhangsan.github.io,将来的网站地址： <a href="https://zhangsan.github.io" target="_blank" rel="external">https://zhangsan.github.io</a> ，刚刚创建的仓库有默认的实例页面，以后你的网站所有代码都是放在这个库仓里了。</p>
-<p>注:<br>A. 注册的邮箱一定要验证，否则不会成功；<br>B. 仓库创建成功不会立即生效，需要过一段时间；<br>C. 每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库。</p>
-<p>三. 绑定域名</p>
-<p>  域名绑定增加博客格调，可以现在绑定，也可以搭建好博客后绑定，或者使用默认的（用户名.github.io）访问是一样的。绑定域名国内的阿里云挺不错了，价格也不贵第一年基本便宜，续费贵点，如果博客使用很长时间，那么多买几年划算。这块我就不多说了，详细参考域名绑定吧。</p>
-<p>  这篇域名绑定不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">  网址：http://www.jianshu.com/p/cea41e5c9b2a?open_source=weibo_search</div><div class="line">   注：现在的域名要实名认证，通过大概要两周时间。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">四. 配置SSH KEY</div><div class="line"></div><div class="line">配置SSH密钥，原因在于提交代码肯定要拥有github权限才行，直接使用用户名和密码不安全，因此我们使用SSH KEY来解决本地和服务器的连接问题。</div><div class="line"></div><div class="line">温馨提示: 所有命令操作都是在git终端（安装了git，鼠标右键，git bash here）进行，切换到hexo目录下</div><div class="line"></div><div class="line"></div><div class="line">``` bash</div><div class="line">$ <span class="built_in">cd</span> ~/. ssh   <span class="comment">#检查本机已存在的ssh密钥</span></div><div class="line">提示：No such file or directory 说明你是第一次使用git。</div><div class="line"></div><div class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></div><div class="line"></div><div class="line">然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，</div><div class="line">记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</div><div class="line"></div><div class="line">将刚复制的内容粘贴到key那里，title随便填，保存。</div><div class="line"></div><div class="line">在git终端测试：</div><div class="line"></div><div class="line">$ ssh -T git@github.com <span class="comment"># 注意邮箱地址不用改</span></div><div class="line"></div><div class="line">提示: Are you sure you want to <span class="built_in">continue</span> connecting (yes/no)?，输入yes。</div><div class="line"></div><div class="line">SSH KEY配置成功会看到：</div><div class="line"></div><div class="line">    Hi zhangsan! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">继续在终端输入:</span></div><div class="line"><span class="string">$ git config --global user.name "zhangsan"// 你的github用户名，非昵称</span></div><div class="line"><span class="string">$ git config --global user.email  "xxx@qq.com"// 填写你的github注册邮箱</span></div><div class="line"><span class="string">配置完成。</span></div></pre></td></tr></table></figure></p>
-<p>五. 配置与使用hexo<br>到这了，说明你已经翻越了很多高山和跳过隐藏大坑了，继续加油吧！点击ReadMore</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2017/11/08/first-post/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
 	
-</div>
-
-</footer>
 
 
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -441,12 +334,89 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -517,4 +487,4 @@ var _hmt = _hmt || [];
 <!-- Tiny_search End -->
 
   </body>
- </html>
+</html>
