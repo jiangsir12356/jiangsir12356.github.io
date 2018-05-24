@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://yoursite.com/images/H.png">
 <meta property="og:image" content="http://yoursite.com/images/I.png">
 <meta property="og:image" content="http://yoursite.com/images/J.png">
-<meta property="og:updated_time" content="2018-03-11T14:05:53.244Z">
+<meta property="og:updated_time" content="2018-05-24T02:41:01.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop伪分布式环境搭建(ubuntu14.04)">
 <meta name="twitter:description" content="一、java环境搭建 参考博客：http://blog.csdn.net/best3c/article/details/72848540 1、安装JDK 1.1新建一个java文件夹名字叫java7u791mkdir /usr/java7u79 1.2将linux版本的jdk安装包从宿主机复制进客人机(客户机)，一般直接可以拖进来，然后拷贝·进/usr/java7u79目录1cp /home/ji">
@@ -165,7 +165,7 @@
 <p>启动完成后，可以通过命令 jps 来判断是否成功启动，若成功启动则会列出如下进程: “NameNode”、”DataNode” 和 “SecondaryNameNode”（如果 SecondaryNameNode 没有启动，请运行 sbin/stop-dfs.sh 关闭进程，然后再次尝试启动尝试）。如果没有 NameNode 或 DataNode ，那就是配置不成功，请仔细检查之前步骤，或通过查看启动日志排查原因。<br>4.5 成功启动<br>可以访问 Web 界面 <a href="http://localhost:50070" target="_blank" rel="external">http://localhost:50070</a> 查看 NameNode 和 Datanode 信息，还可以在线查看 HDFS 中的文件。<br>4.6打开或者关闭hadoop<br>切换到hadoop目录下<br>./sbin/stop-dfs.sh<br>./sbin/start-dfs.sh<br>5、YARN启动（伪分布式不启动 YARN 也可以，一般不会影响程序执行）<br>5.1 YARN简介<br>YARN 是从 MapReduce 中分离出来的，负责资源管理与任务调度。YARN 运行于 MapReduce 之上，提供了高可用性、高扩展性<br>通过 ./sbin/start-dfs.sh 启动 Hadoop，仅仅是启动了 MapReduce 环境，我们可以启动 YARN ，让 YARN 来负责资源管理与任务调度。</p>
 <p>5.2 修改配置文件 mapred-site.xml，这边需要先进行重命名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv ./etc/hadoop/mapred-site.xml.template ./etc/hadoop/mapred-site.xml</div></pre></td></tr></table></figure></p>
 <p>5.3 然后再进行编辑 vim ./etc/hadoop/mapred-site.xml<br> <img src="/images/H.png" alt="&quot;图八&quot;"><br>5.4修改配置文件 yarn-site.xml<br> <img src="/images/I.png" alt="&quot;图九&quot;"><br>5.5启动YARN(启动之前先启动hadoop)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./sbin/start-yarn.sh      <span class="comment"># 启动YARN</span></div><div class="line">./sbin/mr-jobhistory-daemon.sh start historyserver  <span class="comment"># 开启历史服务器，才能在Web中查看任务运行情况</span></div></pre></td></tr></table></figure></p>
-<p>5.6  ps查看，可以看到多了 NodeManager 和 ResourceManager 两个后台进程，如下图所示。<br> <img src="/images/J.png" alt="&quot;图十&quot;"><br>5.7 YARN启动和关闭（单机若无需要不建议开启YARN,使用反而会使程序变慢）<br>![“图十一”](/images/K.png<br>./sbin/mr-jobhistory-daemon.sh stop historyserver<br>stopping historyserver<br>```</p>
+<p>5.6  ps查看，可以看到多了 NodeManager 和 ResourceManager 两个后台进程，如下图所示。<br> <img src="/images/J.png" alt="&quot;图十&quot;"><br>5.7 YARN启动和关闭（单机若无需要不建议开启YARN,使用反而会使程序变慢）<br>![“图十一”](/images/K.png<br>./sbin/mr-jobhistory-daemon.sh stop historyserver<br>stopping historyserver<br>```<br>5.8 hadoop目录下/etc/hadoop slaves文件配置<br>localhost<br>5.9 /etc/hosts文件配置<br>127.0.0.1 localhost<br>本机ip  hadoop-master<br>本机ip  ubuntu</p>
   
 	</div>
 		<footer class="article-footer clearfix">
